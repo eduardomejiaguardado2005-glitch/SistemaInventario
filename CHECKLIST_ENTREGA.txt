@@ -1,0 +1,18 @@
+SEMANA 3 — CHECKLIST
+
+[OK] 3 clases: Producto, Entrada y Salida
+[OK] Atributos privados
+[OK] Constructores con validación
+[OK] Uso de this.
+[OK] Métodos de negocio propios
+[OK] Main con 2 objetos de cada clase
+[OK] Diagrama Mermaid en docs/diagrama-clases.md
+[OK] Código Java en src/
+[OK] README.md
+[OK] Enlace de GitHub incluido en el PDF
+
+PENDIENTE DE EVIDENCIA PERSONAL:
+[ ] Mover "Diagrama UML" a Hecho en Kanban
+[ ] Mover "Codificar clases" a Hecho en Kanban
+[ ] Tomar captura del Kanban y colocarla en el PDF
+[ ] Subir PDF y enlace del repositorio a Moodle

@@ -1,5 +1,3 @@
-# Diagrama de clases - Sistema de Inventario
-
 ```mermaid
 classDiagram
 
