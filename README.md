@@ -1,21 +1,18 @@
-# Sistema de Inventario
+# Sistema de Inventario - Programación III
 
-Proyecto de Programación III — Semana 3.
+Proyecto incremental de Programación III, Semana 4.
 
-## Descripción
-Proyecto orientado a practicar la traducción de un diagrama de clases UML a clases Java, aplicando encapsulamiento, constructores con validación, métodos de negocio y ejecución desde `main`.
+## Contenido
+- Ejemplos guiados de inicialización avanzada.
+- Diseño de clases robustas.
+- Ejercicios de autoevaluación.
+- Ejercicio de auditoría aplicado al proyecto.
+- Método de fábrica y Builder aplicado al dominio de inventario.
 
 ## Estructura
-- `docs/diagrama-clases.md` — diagrama de clases en Mermaid.
-- `src/Producto.java` — clase Producto.
-- `src/Entrada.java` — clase Entrada.
-- `src/Salida.java` — clase Salida.
-- `src/Main.java` — programa principal y demostración.
-
-## Clases
-- **Producto:** administra la información básica y el stock.
-- **Entrada:** registra y aplica entradas de productos.
-- **Salida:** registra y aplica salidas de productos.
+- `src/com/uped/proyecto/modelo/` contiene las clases de dominio.
+- `src/com/uped/proyecto/Main.java` ejecuta las demostraciones.
+- `docs/diagrama-clases.md` contiene el diagrama Mermaid.
 
 ## Repositorio
 https://github.com/eduardomejiaguardado2005-glitch/SistemaInventario

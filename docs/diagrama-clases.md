@@ -1,6 +1,7 @@
+# Diagrama de clases - Semana 4
+
 ```mermaid
 classDiagram
-
 class Producto {
     -String codigo
     -String nombre
@@ -9,6 +10,7 @@ class Producto {
     +Producto(String codigo, String nombre, double precio, int stock)
     +aumentarStock(int cantidad) void
     +reducirStock(int cantidad) boolean
+    +nuevo(String codigo, String nombre, double precio, int stock) Producto
 }
 
 class Entrada {
