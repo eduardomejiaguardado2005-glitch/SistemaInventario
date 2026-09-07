@@ -7,33 +7,26 @@ public class Producto {
     private int stock;
 
     public Producto(String codigo, String nombre, double precio, int stock) {
-        validar(codigo, nombre, precio, stock);
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-    }
-
-    private void validar(String codigo, String nombre, double precio, int stock) {
         if (codigo == null || codigo.isBlank()) {
             throw new IllegalArgumentException("El codigo no puede estar vacio.");
         }
         if (nombre == null || nombre.isBlank()) {
             throw new IllegalArgumentException("El nombre no puede estar vacio.");
         }
-        if (precio < 0) {
-            throw new IllegalArgumentException("El precio no puede ser negativo.");
+        if (precio < 0 || stock < 0) {
+            throw new IllegalArgumentException("Precio y stock no pueden ser negativos.");
         }
-        if (stock < 0) {
-            throw new IllegalArgumentException("El stock no puede ser negativo.");
-        }
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
     }
 
     public void aumentarStock(int cantidad) {
-        if (cantidad > 0) {
-            this.stock += cantidad;
-            System.out.println("Stock de " + nombre + ": " + stock);
+        if (cantidad <= 0) {
+            return;
         }
+        this.stock += cantidad;
     }
 
     public boolean reducirStock(int cantidad) {
@@ -42,10 +35,6 @@ public class Producto {
         }
         stock -= cantidad;
         return true;
-    }
-
-    public static Producto nuevo(String codigo, String nombre, double precio, int stock) {
-        return new Producto(codigo, nombre, precio, stock);
     }
 
     @Override

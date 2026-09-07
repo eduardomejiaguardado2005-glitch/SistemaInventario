@@ -4,66 +4,48 @@ import com.uped.proyecto.modelo.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== EJEMPLOS GUIADOS SEMANA 4 ===");
 
-        new Pedido(101);
+        System.out.println("=== SEMANA 5: HERENCIA ===");
 
-        Suscripcion s1 = new Suscripcion("ana");
-        System.out.println(s1);
-        Suscripcion s2 = Suscripcion.premium("carlos");
-        System.out.println(s2);
+        Cliente cliente = new Cliente("Ana López", "04512378-9", "7777-1234");
+        System.out.println(cliente.presentarse());
 
-        ConfiguracionReporte config = new ConfiguracionReporte.Builder()
-                .titulo("Ventas Q3")
-                .conGrafico()
-                .build();
-        System.out.println(config);
+        Empleado empleado = new Empleado("Luis Pérez", "06223456-1", 850.0);
+        System.out.println(empleado.presentarse());
+        empleado.actualizarNombre("Luis Pérez Martínez");
+        System.out.println(empleado.presentarse());
 
-        Carrito carrito = new Carrito();
-        carrito.agregar("Café");
-        carrito.agregar("Azúcar");
-        carrito.getItems().clear();
-        System.out.println("Items en el carrito: " + carrito.getItems().size());
+        Visitante visitante = new Visitante("Kevin");
+        System.out.println(visitante);
 
-        Empleado empleado = new Empleado("04512378-9", "Analista");
-        System.out.println(empleado);
-        empleado.ascender("Analista Senior");
-        System.out.println(empleado);
+        Estudiante estudiante = new Estudiante(
+                "Carlos Gómez", "05123456-7", "MG-12345-25", "Sistemas");
+        System.out.println(estudiante);
+        estudiante.matricular("Programación III");
 
-        Punto original = new Punto(2, 3);
-        Punto movido = original.mover(1, 1);
-        System.out.println("Original: " + original);
-        System.out.println("Movido: " + movido);
+        Docente docente = new Docente(
+                "María Hernández", "05987654-3",
+                "Ingeniería de Software", 8);
+        System.out.println(docente);
+        docente.impartirClase("Programación III");
 
-        Vehiculo v1 = Vehiculo.nuevo("P123-789", "Kia");
-        System.out.println(v1);
-        v1.recorrer(150);
-        System.out.println(v1);
-        v1.recorrer(-20);
+        Persona[] personas = {
+            new Cliente("Ana", "0451...", "7777-1"),
+            new Empleado("Luis", "0622...", 850.0)
+        };
 
-        LibroBiblioteca l1 = new LibroBiblioteca("Clean Code", "R. Martin", 3);
-        LibroBiblioteca l2 = LibroBiblioteca.unico("Effective Java", "J. Bloch");
-        l1.prestar();
-        l2.prestar();
-        l2.prestar();
+        System.out.println("\n=== UPCASTING ===");
+        for (Persona p : personas) {
+            System.out.println(p.presentarse());
+        }
 
-        System.out.println("\n=== EJERCICIO 8.1 ===");
-        new Registro();
+        System.out.println("\n=== SISTEMA DE INVENTARIO ===");
+        Producto producto = new Producto("P001", "Teclado", 25.50, 10);
+        Entrada entrada = new Entrada("E001", "01/09/2026", 5);
+        Salida salida = new Salida("S001", "01/09/2026", 3);
 
-        System.out.println("\n=== EJERCICIO 8.2 ===");
-        Vehiculo v2 = Vehiculo.nuevo("P123-789", "Kia");
-        System.out.println(v2);
-        v2.recorrer(150);
-        System.out.println(v2);
-        v2.recorrer(-20);
-
-        System.out.println("\n=== EJERCICIO 8.4: BUILDER DE PRODUCTO ===");
-        Producto producto1 = Producto.nuevo("P001", "Teclado", 25.50, 10);
-        Producto producto2 = new Producto("P002", "Mouse", 15.00, 8);
-        System.out.println(producto1);
-        System.out.println(producto2);
-        producto1.aumentarStock(5);
-        System.out.println("Salida permitida: " + producto1.reducirStock(3));
-        System.out.println(producto1);
+        entrada.aplicarEntrada(producto);
+        salida.aplicarSalida(producto);
+        System.out.println(producto);
     }
 }
